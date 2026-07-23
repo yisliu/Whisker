@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -12,7 +13,7 @@ public class WinScreenManager : MonoBehaviour
 
     [SerializeField] private GameObject winPanel;
     [SerializeField] private string mainMenuScene = "Start Screen";
-
+    [SerializeField] private Button nextLevelButton;
 #if UNITY_EDITOR
     [SerializeField] private SceneAsset nextSceneAsset;
     private void OnValidate()
@@ -68,16 +69,16 @@ public class WinScreenManager : MonoBehaviour
     private void ShowWin()
     {
         hasWon = true;
-
-        if (!string.IsNullOrEmpty(nextScene))
+        if (winPanel != null)
         {
-            Time.timeScale = 1f;
-            SceneManager.LoadScene(nextScene);
-            return;
+            winPanel.SetActive(true);
         }
 
-        if (winPanel != null) winPanel.SetActive(true);
         Time.timeScale = 0f;
+        if (nextLevelButton != null)
+        {
+            nextLevelButton.interactable = !string.IsNullOrEmpty(nextScene);
+        }
     }
 
     public void PlayAgain()
@@ -90,5 +91,11 @@ public class WinScreenManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuScene);
+    }
+
+    public void LoadNextLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(nextScene);
     }
 }

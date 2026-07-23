@@ -22,6 +22,7 @@ public class finishOrder : MonoBehaviour
         else
         {
             Debug.Log("Food Delivered");
+			ScoreManager.Instance?.AddPoints(1000);
             Destroy(heldF);
             Destroy(gameObject);
         }
