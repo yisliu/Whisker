@@ -1,31 +1,17 @@
 # Whisker — Design Document
 
-> Placeholder document. Details subject to change.
-
 ## Concept
 
-A cozy 2.5D baking game where you play as a cat baker serving animal customers. Take orders, combine ingredients in the dough pot, and fulfill requests before customers lose patience.
+We wanted to create a cozy and relaxing 2.5D baking game where you play as a cat baker serving various different animal customers. You'll be able to make various different kinds of pastries and get to know the different animal characters.
 
-## Gameplay Loop
+## How to Play
 
-1. Customer enters and places an order
-2. Player gathers ingredients and adds them to the dough pot
-3. Bake the pastry
-4. Serve the finished item to the customer
-5. Earn rewards and move to the next order
+1. You can select start game in the start menu
+2. For the main game, it is split into 2 levels where you will have to serve a certain amount of pastries before you get a story development.
+3. Once you complete the story, you will recieve two different endings.
 
 ## Characters
 
-- **Player** — a cat baker running the shop
-- **Customers** — various animal characters, each with their own order
+- **Player** — a cat baker
+- **Customers** — a rabbit, a fox, and a bear
 
-## Setting
-
-A cozy bakery kitchen. The player is a 2D sprite moving through a 3D environment.
-
-## Scope (MVP)
-
-- [ ] Basic order system
-- [ ] Ingredient + dough pot mechanic
-- [ ] 1–2 pastry types
-- [ ] 2–3 animal customer types

@@ -83,6 +83,6 @@ public class EnemyAI : MonoBehaviour
     void PickNewPattern()
     {
         attackPattern = Random.Range(0, 3); // 0, 1, or 2
-        agent.speed = 80f; // reset speed to normal
+        agent.speed = 200f; // reset speed to normal
     }
 }
