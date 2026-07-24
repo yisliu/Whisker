@@ -5,6 +5,7 @@ public class finishOrder : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("Customer")]
     public string itemTag = "bread";
+	public float deliveryRadius = 2f;
 
     private void OnMouseDown()
     {
@@ -12,8 +13,9 @@ public class finishOrder : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void foodDelivered()
-    {
+    /*public void foodDelivered()
+    {*/
+/*
         GameObject heldF = GameObject.FindWithTag(itemTag);
         if (heldF == null)
         {
@@ -27,5 +29,60 @@ public class finishOrder : MonoBehaviour
             Destroy(gameObject);
         }
         //Destroy(gameObject);
+*/
+        /*GameObject heldF = GameObject.FindWithTag(itemTag);
+        if (heldF == null)
+        {
+            Debug.Log("No food");
+			ScoreManager.Instance?.AddPoints(-1000);
+
+        }
+        else
+        {
+            Debug.Log("Food Delivered");
+			ScoreManager.Instance?.AddPoints(1000);
+            Destroy(heldF);
+			GetComponentInParent<customerAI>()?.CompleteOrder();
+			Destroy(gameObject);
+        }
+	*/
+/*
+		GameObject heldF = null;
+		Collider[] nearbyColliders = Physics.OverlapSphere(transform.position, deliveryRadius); 
+		foreach (Collider collider in nearbyColliders){
+			if(collider.tag == itemTag){
+				heldF = collider.gameObject;
+				break;
+			}
+		}
+		if(heldF != null){
+			Debug.Log("Food Delivered");
+			ScoreManager.Instance?.AddPoints(1000);
+            Destroy(heldF);
+			GetComponentInParent<customerAI>()?.CompleteOrder();
+			Destroy(gameObject);
+		}
+		else{
+			Debug.Log("No food");
+			ScoreManager.Instance?.AddPoints(-1000);
+		}
+    }
+
+*/
+    public void foodDelivered()
+    {
+		PlayerMovementFixed player = FindObjectOfType<PlayerMovementFixed>();
+		if(player == null || player.HeldObject ==  null || !player.HeldObject.CompareTag(itemTag)){
+			Debug.Log("Bad kitty!");
+			//ScoreManager.Instance?.AddPoints(-10000);
+			GetComponentInParent<customerAI>()?.WrongOrder();
+		}
+		else{
+			Debug.Log("Food Delivered");
+			ScoreManager.Instance?.AddPoints(1000);
+            Destroy(player.HeldObject.gameObject);
+			GetComponentInParent<customerAI>()?.CompleteOrder();
+			Destroy(gameObject);
+		}
     }
 }

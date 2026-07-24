@@ -9,6 +9,9 @@ TagManager:
   - bread
   - egg
   - apple
+  - Honey_Pie
+  - Crossiant
+  - Carrot
   layers:
   - Default
   - TransparentFX
