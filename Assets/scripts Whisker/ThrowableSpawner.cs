@@ -24,7 +24,7 @@ public class ThrowableSpawner : MonoBehaviour
         InvokeRepeating(nameof(SpawnObjects), respawnInterval, respawnInterval);
     }
 
-
+/*
     void SpawnObjects()
     {
         spawnedObjects.RemoveAll(o => o == null);
@@ -52,19 +52,27 @@ public class ThrowableSpawner : MonoBehaviour
 
         Debug.Log($"[ThrowableSpawner] Spawned {spawned} objects ({spawnedObjects.Count} total active).");
     }
+*/
 
-
-/*
 	void SpawnObjects(){
-		spawnedObject.RemoveAll(0 => o == null);
+		spawnedObjects.RemoveAll(o => o == null);
 		int toSpawn = maxObjects - spawnedObjects.Count;
 		for(int i = 0; i<toSpawn; i++){
 			float px = Random.Range(-sWidth/2f, sWidth/2f);
 			float pz = Random.Range(-sHeight/2f, sHeight/2f);
-			
+			Vector3 spawnPos = transform.position + new Vector3(px, 0f, pz);
+			GameObject prefab = throwablePrefabs[Random.Range(0, throwablePrefabs.Length)];
+			GameObject obj = Instantiate(prefab, spawnPos, Quaternion.identity);
+			Rigidbody rb = obj.GetComponent<Rigidbody>();
+			if(rb != null){
+				rb.linearVelocity = Vector3.zero;
+				rb.angularVelocity = Vector3.zero;
+				rb.linearDamping = 10f;
+			}
+			spawnedObjects.Add(obj);
 		}
 	}
-*/
+
 
     void OnDrawGizmosSelected()
     {
