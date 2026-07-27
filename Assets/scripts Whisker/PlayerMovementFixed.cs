@@ -617,10 +617,17 @@ public class PlayerMovementFixed : MonoBehaviour
     private float throwLockTimer;
 
     public bool IsJumping => !isGrounded;
+    public Throwable HeldObject => heldObject;
+
+    [SerializeField] private Animator spriteAnimator;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        if (spriteAnimator == null)
+        {
+            spriteAnimator = GetComponentInChildren<Animator>();
+        }
 
         if (jumpStarParticles == null)
             jumpStarParticles = GetComponentInChildren<ParticleSystem>();
@@ -687,7 +694,10 @@ public class PlayerMovementFixed : MonoBehaviour
         // Movement (suppressed briefly after throwing)
         float x = throwLockTimer > 0f ? 0f : Input.GetAxis("Horizontal");
         float z = throwLockTimer > 0f ? 0f : Input.GetAxis("Vertical");
-        Vector3 move = Vector3.right * x + Vector3.forward * z;
+        //Vector3 move = Vector3.right * x + Vector3.forward * z;
+        Vector3 camForward = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up).normalized;
+        Vector3 camRight = Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up).normalized;
+        Vector3 move = camRight * x + camForward * z;
 
         float currentSpeed = Input.GetKey(KeyCode.LeftShift) && isGrounded ? runSpeed : walkSpeed;
         controller.Move(move * currentSpeed * Time.deltaTime);
@@ -773,6 +783,7 @@ public class PlayerMovementFixed : MonoBehaviour
             heldObject = null;
             throwLockTimer = ThrowMoveLockDuration;
         }
+        UpdateAnimation();
     }
 
     void PlayJumpEffect()
@@ -792,5 +803,20 @@ public class PlayerMovementFixed : MonoBehaviour
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
         }
+    }
+
+    void UpdateAnimation()
+    {
+        if (spriteAnimator == null)
+        {
+            return;
+        }
+        float rawX = Input.GetAxisRaw("Horizontal");
+        float rawZ = Input.GetAxisRaw("Vertical");
+        spriteAnimator.SetFloat("x", rawX);
+        spriteAnimator.SetFloat("y", rawZ);
+        spriteAnimator.SetBool("isMoving", rawX != 0f || rawZ != 0f);
+        spriteAnimator.SetBool("isGrounded", isGrounded);
+
     }
 }

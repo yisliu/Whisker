@@ -11,9 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/core game/scenes/level1Whisker.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/core game/scenes/level2Whisker 1.unity
     guid: ea2310aec73174d5aa90e3208adee781
+  - enabled: 1
+    path: Assets/Scenes/core game/scenes/level2Whisker 2.unity
+    guid: bc9027abd4a9a4aa4bc8e740d45bd390
+  - enabled: 1
+    path: Assets/Scenes/core game/exitGame.unity
+    guid: 8b135547afa2941bc876d5ac8821d28e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

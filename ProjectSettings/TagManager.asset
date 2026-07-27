@@ -9,6 +9,13 @@ TagManager:
   - bread
   - egg
   - apple
+  - Honey_Pie
+  - Crossiant
+  - Carrot
+  - carrotI
+  - butter
+  - honey
+  - dough
   layers:
   - Default
   - TransparentFX
