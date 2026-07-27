@@ -87,10 +87,7 @@ public class customerAI : MonoBehaviour
         }
         
         UpdateAnimation();
-        if (state == State.Waiting && Input.GetKeyDown(KeyCode.F))
-        {
-            customerDialogue.Instance.StartDialogue(greetingLines);
-        }
+        
     }
 
     public void CompleteOrder()
@@ -99,18 +96,19 @@ public class customerAI : MonoBehaviour
         {
             return;
         }
+        customerDialogue.Instance.onDialogueComplete = () => WinScreenManager.Instance?.TriggerWin();
         customerDialogue.Instance.StartDialogue(thankYouLines);
         PlayEffect(happyP);
         StartLeaving();
     }
 
-    /*void OnMouseDown()
+    public void TriggerGreeting()
     {
-        if (state == State.Waiting)
+        if (state != State.Leaving)
         {
             customerDialogue.Instance.StartDialogue(greetingLines);
         }
-    }*/
+    }
 
     private void StartLeaving()
     {

@@ -66,6 +66,8 @@ public class WinScreenManager : MonoBehaviour
         if (won) ShowWin();
     }
 
+    public void TriggerWin() => ShowWin();
+
     private void ShowWin()
     {
         hasWon = true;

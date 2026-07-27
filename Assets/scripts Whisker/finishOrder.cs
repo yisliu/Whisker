@@ -72,15 +72,20 @@ public class finishOrder : MonoBehaviour
     public void foodDelivered()
     {
 		PlayerMovementFixed player = FindObjectOfType<PlayerMovementFixed>();
-		if(player == null || player.HeldObject ==  null || !player.HeldObject.CompareTag(itemTag)){
+		if (player == null || player.HeldObject == null)
+		{
+			GetComponentInParent<customerAI>()?.TriggerGreeting();
+		}
+		else if (!player.HeldObject.CompareTag(itemTag))
+		{
 			Debug.Log("Bad kitty!");
-			//ScoreManager.Instance?.AddPoints(-10000);
 			GetComponentInParent<customerAI>()?.WrongOrder();
 		}
-		else{
+		else
+		{
 			Debug.Log("Food Delivered");
 			ScoreManager.Instance?.AddPoints(1000);
-            Destroy(player.HeldObject.gameObject);
+			Destroy(player.HeldObject.gameObject);
 			GetComponentInParent<customerAI>()?.CompleteOrder();
 			Destroy(gameObject);
 		}

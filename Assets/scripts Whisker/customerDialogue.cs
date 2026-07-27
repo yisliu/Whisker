@@ -10,6 +10,7 @@ public class customerDialogue : MonoBehaviour
     public float textSpeed = 0.05f;
     private string[] currentLines;
     private int index;
+    public System.Action onDialogueComplete;
 
     void Awake()
     {
@@ -20,7 +21,7 @@ public class customerDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (textComponent.text == currentLines[index])
             {
@@ -63,6 +64,9 @@ public class customerDialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            System.Action callback = onDialogueComplete;
+            onDialogueComplete = null;
+            callback?.Invoke();
         }
     }
 }
