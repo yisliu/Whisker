@@ -16,6 +16,10 @@ TagManager:
   - butter
   - honey
   - dough
+  - lemon
+  - strawberry
+  - baguette
+  - lemon_roll
   layers:
   - Default
   - TransparentFX
