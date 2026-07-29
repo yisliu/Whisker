@@ -11,12 +11,48 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/core game/scenes/level1Whisker.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/core game/scenes/level2Whisker 1.unity
-    guid: ea2310aec73174d5aa90e3208adee781
   - enabled: 1
-    path: Assets/Scenes/core game/scenes/level2Whisker 2.unity
-    guid: bc9027abd4a9a4aa4bc8e740d45bd390
+    path: Assets/Scenes/core game/scenes/granny.unity
+    guid: 559ea8b16bdda4110bab2ebefc54d43c
+  - enabled: 1
+    path: Assets/Scenes/core game/scenes/willow.unity
+    guid: c830ff80449dc4c50b4c63db93cb7a2c
+  - enabled: 1
+    path: Assets/Scenes/core game/scenes/mila.unity
+    guid: 1e5909fd84a2446168e67d1df3db62d2
+  - enabled: 1
+    path: Assets/Scenes/core game/scenes/charlie.unity
+    guid: 3f311768ce5254db5aa9daf75ee9681d
+  - enabled: 1
+    path: Assets/Scenes/core game/scenes/finn.unity
+    guid: 1f4d62c32daf0455da9982e1032166b1
+  - enabled: 1
+    path: Assets/Scenes/core game/scenes/charlie2.unity
+    guid: 7fec76ecbfa934cb0aa70bc448718d1b
+  - enabled: 1
+    path: Assets/Scenes/core game/scenes/finn 2.unity
+    guid: 081f9279da46441e7bbd1daeb5be56bc
+  - enabled: 1
+    path: Assets/Scenes/core game/scenes/granny2.unity
+    guid: 71b7b5fc33e984cdabfae3f3dcaec940
+  - enabled: 1
+    path: Assets/Scenes/core game/scenes/willow2.unity
+    guid: 7ea6e273a861343b3afd2ce5ed4c456b
+  - enabled: 1
+    path: Assets/Scenes/core game/choices/choice1.unity
+    guid: bec769a82a9564e2c9689384f45f4157
+  - enabled: 1
+    path: Assets/Scenes/core game/choices/choice2.unity
+    guid: b6a5c4ee3a37549c19dfdf5c06f85d1a
+  - enabled: 1
+    path: Assets/Scenes/core game/choices/choice3.unity
+    guid: c1d8c84dbd2244d38b2ac14f7abc4c35
+  - enabled: 1
+    path: Assets/Scenes/core game/choices/choice4.unity
+    guid: cb368942e1b7c4aca97a4696bbfde37d
+  - enabled: 1
+    path: Assets/Scenes/core game/choices/choice5.unity
+    guid: 94fd73e01a669427ea9d16dba1f15b2b
   - enabled: 1
     path: Assets/Scenes/core game/exitGame.unity
     guid: 8b135547afa2941bc876d5ac8821d28e

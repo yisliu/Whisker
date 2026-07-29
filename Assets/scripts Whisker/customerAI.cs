@@ -30,8 +30,8 @@ public class customerAI : MonoBehaviour
 
     [SerializeField] private string[] badLines;
     //customerDialogue.Instance.StartDialogue(greetingLines);
-    
-    
+
+    private Collider deliveryCollider;
     
     
     void Start()
@@ -43,6 +43,11 @@ public class customerAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         wTimer = timer;
 
+        deliveryCollider = GetComponentInChildren<finishOrder>()?.GetComponent<Collider>();
+        if (deliveryCollider != null)
+        {
+            deliveryCollider.enabled = false;
+        }
         if (sPoint != null)
         {
             agent.SetDestination(sPoint.position);
@@ -64,7 +69,12 @@ public class customerAI : MonoBehaviour
                 {
                     agent.isStopped = true;
                     state = State.Waiting;
-                    customerDialogue.Instance.StartDialogue(greetingLines);
+                    wTimer = timer;
+                    if (deliveryCollider != null)
+                    {
+                        deliveryCollider.enabled = true;
+                    }
+                    customerDialogue.Instance?.StartDialogue(greetingLines);
                 }
 
                 break;
@@ -90,29 +100,75 @@ public class customerAI : MonoBehaviour
         
     }
 
+    /*
     public void CompleteOrder()
     {
         if (state != State.Waiting)
         {
             return;
         }
-        customerDialogue.Instance.onDialogueComplete = () => WinScreenManager.Instance?.TriggerWin();
-        customerDialogue.Instance.StartDialogue(thankYouLines);
+        if (customerDialogue.Instance != null)
+        {
+            //ScoreManager.Instance?.AddPoints(1000);
+            customerDialogue.Instance.onDialogueComplete = () =>
+            {
+                ScoreManager.Instance?.AddPoints(1000);
+                WinScreenManager.Instance?.TriggerWin();
+            };
+            customerDialogue.Instance.StartDialogue(thankYouLines);
+        }
+        else
+        {
+            ScoreManager.Instance?.AddPoints(1000);
+            WinScreenManager.Instance?.TriggerWin();
+        }
         PlayEffect(happyP);
         StartLeaving();
     }
-
+*/
+    public void CompleteOrder()
+    {
+        Debug.Log("Complete order state: " + state);
+        if (state != State.Waiting)
+        {
+            Debug.Log("early ending - not waiting");
+            return;
+        }
+        if (customerDialogue.Instance != null)
+        {
+            //ScoreManager.Instance?.AddPoints(1000);
+            customerDialogue.Instance.onDialogueComplete = () =>
+            {
+                Debug.Log("Dialogue launched!");
+                ScoreManager.Instance?.AddPoints(1000);
+                WinScreenManager.Instance?.TriggerWin();
+            };
+            customerDialogue.Instance.StartDialogue(thankYouLines);
+        }
+        else
+        {
+            Debug.Log("customerdialogue.instance is null!!!");
+            ScoreManager.Instance?.AddPoints(1000);
+            WinScreenManager.Instance?.TriggerWin();
+        }
+        PlayEffect(happyP);
+        StartLeaving();
+    }
     public void TriggerGreeting()
     {
         if (state != State.Leaving)
         {
-            customerDialogue.Instance.StartDialogue(greetingLines);
+            customerDialogue.Instance?.StartDialogue(greetingLines);
         }
     }
 
     private void StartLeaving()
     {
         state = State.Leaving;
+        if (deliveryCollider != null)
+        {
+            deliveryCollider.enabled = false;
+        }
         agent.isStopped = false;
         if (ePoint != null)
         {
@@ -152,7 +208,7 @@ public class customerAI : MonoBehaviour
         }
 
         ScoreManager.Instance?.AddPoints(-10000);
-        customerDialogue.Instance.StartDialogue(badLines);
+        customerDialogue.Instance?.StartDialogue(badLines);
     }
 }
 

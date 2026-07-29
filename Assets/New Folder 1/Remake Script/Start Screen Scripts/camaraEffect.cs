@@ -34,4 +34,9 @@ public class CameraEffect : MonoBehaviour
         transform.DOShakePosition(duration, strength, vibrato, 90f, false, true)
             .OnComplete(() => transform.localPosition = originalPosition);
     }
+
+    private void OnDestroy()
+    {
+        transform.DOKill();
+    }
 }

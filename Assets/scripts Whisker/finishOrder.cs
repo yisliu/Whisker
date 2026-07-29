@@ -84,7 +84,7 @@ public class finishOrder : MonoBehaviour
 		else
 		{
 			Debug.Log("Food Delivered");
-			ScoreManager.Instance?.AddPoints(1000);
+			//ScoreManager.Instance?.AddPoints(1000);
 			Destroy(player.HeldObject.gameObject);
 			GetComponentInParent<customerAI>()?.CompleteOrder();
 			Destroy(gameObject);

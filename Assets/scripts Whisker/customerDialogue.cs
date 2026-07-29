@@ -37,6 +37,7 @@ public class customerDialogue : MonoBehaviour
 
     public void StartDialogue(string[] lines)
     {
+        StopAllCoroutines();
         currentLines = lines;
         index = 0;
         gameObject.SetActive(true);
@@ -49,7 +50,7 @@ public class customerDialogue : MonoBehaviour
         foreach (char c in currentLines[index])
         {
             textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForSecondsRealtime(textSpeed);
         }
     }
 
