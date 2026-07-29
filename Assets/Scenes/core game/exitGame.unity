@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536a11baa281b484e9b855356ad3db58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSceneName: level1Whisker
+  levelSceneName: level1.2Whiske
 --- !u!1 &463246239
 GameObject:
   m_ObjectHideFlags: 0

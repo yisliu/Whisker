@@ -20,6 +20,7 @@ TagManager:
   - strawberry
   - baguette
   - lemon_roll
+  - strawberry_cake
   layers:
   - Default
   - TransparentFX
