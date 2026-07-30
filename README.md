@@ -1,5 +1,7 @@
 # Whisker
 
+[![Play Whisker on itch.io](Assets/sprites/background/COVER.jpg)](https://yliu2026.itch.io/whisker)
+
 This is a cozy baking game where you play as a cat baker. You need to serve various different animal customers different pastries.
 
 ## About

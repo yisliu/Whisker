@@ -1,3 +1,7 @@
+# Build outputs
+whisker build.app/
+whisker build.zip
+
 # Unity generated
 [Ll]ibrary/
 [Tt]emp/
