@@ -807,7 +807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4175085390632613681, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
       propertyPath: deliveryRadius
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5390220269943376463, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
       propertyPath: m_Name
@@ -896,7 +896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6466090054451681488, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
       propertyPath: greetingLines.Array.size
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6466090054451681488, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
       propertyPath: thankYouLines.Array.size
@@ -925,7 +925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6466090054451681488, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
       propertyPath: 'greetingLines.Array.data[5]'
-      value: "Nana(customer): HEY! you\u2019re Coco right? "
+      value: "Customer???: HEY! you\u2019re Coco right? "
       objectReference: {fileID: 0}
     - target: {fileID: 6466090054451681488, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
       propertyPath: 'greetingLines.Array.data[6]'
@@ -933,7 +933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6466090054451681488, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
       propertyPath: 'greetingLines.Array.data[7]'
-      value: 'Nana: Haha sorry, I forgot to introduce myself! '
+      value: 'Customer???: Haha sorry, I forgot to introduce myself! '
       objectReference: {fileID: 0}
     - target: {fileID: 6466090054451681488, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
       propertyPath: 'greetingLines.Array.data[8]'
@@ -981,8 +981,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6466090054451681488, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
       propertyPath: 'greetingLines.Array.data[14]'
-      value: "Nana: By the way, whenever  you\u2019re unsure about how to make the
-        pastry, just check the order combination on top of my head."
+      value: Also, you can drop the item you picked up by clicking anywhere but the
+        customer and clicking E again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466090054451681488, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
+      propertyPath: 'greetingLines.Array.data[15]'
+      value: Additionally, you deliver the food to the customer by clicking on them.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466090054451681488, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
+      propertyPath: 'greetingLines.Array.data[16]'
+      value: You have to drop the food into the big orange-red sphere on the ground.
+        That is you current oven thing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466090054451681488, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
+      propertyPath: 'greetingLines.Array.data[17]'
+      value: Have Fun!
       objectReference: {fileID: 0}
     - target: {fileID: 8329693109501353853, guid: fe344659c58fc4553aaa2edc1f4cbbbf, type: 3}
       propertyPath: m_Controller
@@ -3351,7 +3364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11.276, y: -136.161}
+  m_AnchoredPosition: {x: 11.275879, y: -136.16089}
   m_SizeDelta: {x: -66.5, y: -341.562}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &714563967
@@ -6035,7 +6048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.000122, y: -70}
+  m_AnchoredPosition: {x: -5.999939, y: -70}
   m_SizeDelta: {x: -61.83, y: -316.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1543942255
@@ -9125,67 +9138,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138742865}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &5796000153314855763
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 697101653866274196, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_Name
-      value: crossiant
-      objectReference: {fileID: 0}
-    - target: {fileID: 697101653866274196, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066481762198508370, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066481762198508370, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066481762198508370, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 33.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066481762198508370, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066481762198508370, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066481762198508370, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066481762198508370, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066481762198508370, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066481762198508370, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066481762198508370, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dd7d534d649364ed291bc7d0a107b89e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -9211,7 +9163,6 @@ SceneRoots:
   - {fileID: 1467014159}
   - {fileID: 622240329}
   - {fileID: 1188189364}
-  - {fileID: 5796000153314855763}
   - {fileID: 2056783189}
   - {fileID: 1659162416}
   - {fileID: 227195272}

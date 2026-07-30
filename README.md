@@ -1,3 +1,5 @@
+![Whisker Logo](media/Logo.jpg)
+
 # Whisker
 
 This is a cozy baking game where you play as a cat baker. You need to serve various different animal customers different pastries.

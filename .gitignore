@@ -30,6 +30,10 @@
 *.pdb.meta
 *.mdb.meta
 
+# Personal builds
+whisker build.app/
+whisker build.zip
+
 # OS generated
 .DS_Store
 .DS_Store?

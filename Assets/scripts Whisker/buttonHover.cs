@@ -38,7 +38,11 @@ public class buttonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         tween?.Kill();
         tween = transform.DOScale(initScale, duration).SetEase(Ease.OutBack);
         //newAudio.SetActive(false);
-        newAudio?.Stop();
+       // newAudio?.Stop();
+       if (newAudio != null)
+       {
+           newAudio.Stop();
+       }
     }
 
     void OnDestroy()

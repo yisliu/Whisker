@@ -2973,7 +2973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choicePanel: {fileID: 1011335375}
-  nextScene: exitGame
+  nextScene: finalCutscene
   triggerLines:
   - "Mila: I\u2019m sorry Coco, it was me all along\u2026 "
   - "Mila: My cubs got sick and I was trying to find more food to feed them. I\u2019ve

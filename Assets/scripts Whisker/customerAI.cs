@@ -207,7 +207,7 @@ public class customerAI : MonoBehaviour
             return;
         }
 
-        ScoreManager.Instance?.AddPoints(-10000);
+        ScoreManager.Instance?.AddPoints(-1);
         customerDialogue.Instance?.StartDialogue(badLines);
     }
 }
